@@ -12,6 +12,9 @@ footer
 			+make(4,6,12)
 			color: #fff
 			text-transform: uppercase
+			word-wrap: break-word
+			+breakpoint($mobile)
+				margin-bottom: 60px
 			.title
 				+font-size(20px)
 				font-weight: bold
@@ -29,6 +32,7 @@ footer
 	padding-bottom: 30px
 	border-top: 1px solid #fff
 	color: #fff
+	display: table
 	.inner
 		+make(10,10,10)
 		+make-offset(1,1,1)
@@ -36,3 +40,6 @@ footer
 			float: left
 		.right
 			float: right
+			+breakpoint($mobile)
+				float: left
+				padding-top: 15px

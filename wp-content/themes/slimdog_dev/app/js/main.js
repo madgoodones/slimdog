@@ -25,6 +25,8 @@ $( document ).ready(function() {
 	    nav:true,
 	    autoplay:false,
 	    autoplayTimeout: 4000,
+	    autoHeight: true,
+	    autoHeightClass: 'owl-height',
 	    navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
 	    responsive:{
 	        0:{
