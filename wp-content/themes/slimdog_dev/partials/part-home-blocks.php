@@ -20,7 +20,7 @@ $args = array(
 	
 			<div class="home-block" style="
 			background: url('<?php echo $img['url'] ?>') no-repeat center center;
-			background-size: cover;
+			background-size: 150%;
 			">
 				<div class="title">
 					<?php the_title(); ?>
@@ -33,7 +33,7 @@ $args = array(
 	<?php if($i % 2): ?>
 			<div class="home-block" style="
 			background: url('http://localhost/slimdog/wp-content/uploads/2017/08/slimdog.png') no-repeat center center;
-			background-size: cover;
+			background-size: 150%;
 			">
 			</div>
 	<?php endif; ?>
