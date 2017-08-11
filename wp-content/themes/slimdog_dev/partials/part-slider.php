@@ -15,7 +15,7 @@ $args = array(
 		<div class="go-slider-item" 
 		style="
 		background: url('<?php the_field('slider_image') ?>');
-		opacity: <?php if(!(get_field('html_text'))): echo "1"; endif ?>
+		
 		">
 		</div>
 		
@@ -27,6 +27,10 @@ $args = array(
 
 				<div class="text">
 					<?php the_field('slider_text') ?>
+				</div>
+
+				<div class="subtitle">
+					<?php the_field('slider_subtitle') ?>
 				</div>
 				<?php endif ?>
 			</div>
