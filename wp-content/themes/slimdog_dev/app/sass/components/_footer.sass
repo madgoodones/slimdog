@@ -1,0 +1,38 @@
+footer
+	background-color: #000
+	background-image: url("http://localhost/slimdog/wp-content/uploads/2017/08/pattern.png")
+	display: table
+	width: 100%
+	.inner
+		+make(10,10,10)
+		+make-offset(1,1,1)
+		padding: 0
+		padding: 60px 0px
+		.block
+			+make(4,6,12)
+			color: #fff
+			text-transform: uppercase
+			.title
+				+font-size(20px)
+				font-weight: bold
+				margin-bottom: 15px
+			.social
+				margin-top: 60px
+				a
+					i
+						color: #fff
+						padding-right: 9px
+.post-footer
+	width: 100%
+	background-color: #000
+	padding-top: 20px
+	padding-bottom: 30px
+	border-top: 1px solid #fff
+	color: #fff
+	.inner
+		+make(10,10,10)
+		+make-offset(1,1,1)
+		.left
+			float: left
+		.right
+			float: right

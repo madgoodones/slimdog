@@ -44,6 +44,46 @@ function gw_svg_support($mimes) {
   return $mimes;
 }
 
+function gw_widgets() {
+
+  register_sidebar( array(
+    'name'          => 'Footer 1',
+    'id'            => 'footer_1',
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '<div class="title">',
+    'after_title'   => '</div>',
+    ) );
+
+  register_sidebar( array(
+    'name'          => 'Footer 2',
+    'id'            => 'footer_2',
+    'before_widget' => '<div class="block">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<div class="title">',
+    'after_title'   => '</div>',
+    ) );
+
+  register_sidebar( array(
+    'name'          => 'Footer 3',
+    'id'            => 'footer_3',
+    'before_widget' => '<div class="block">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<div class="title">',
+    'after_title'   => '</div>',
+    ) );
+
+  register_sidebar( array(
+    'name'          => 'Social',
+    'id'            => 'social',
+    'before_widget' => '',
+    'after_widget'  => '',
+    'before_title'  => '<h4 class="title">',
+    'after_title'   => '</h4>',
+    ) );
+
+}
+
 function gw_nav() {
     wp_nav_menu(
     array(
@@ -92,6 +132,7 @@ add_action( 'wp_enqueue_scripts', 'gw_scripts' );
 add_action('login_head', 'gw_login');
 add_action('init', 'gw_menu');
 add_action('init', 'gw_pagination'); // Add our HTML5 Pagination
+add_action( 'widgets_init', 'gw_widgets' );
 /*------------------------------------*\
     Theme Filters
 \*------------------------------------*/

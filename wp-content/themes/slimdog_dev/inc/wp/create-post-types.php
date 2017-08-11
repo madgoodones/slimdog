@@ -39,6 +39,24 @@ function create_post_types() {
           )
         );
 
+    register_post_type( 'sobre',
+        array(
+          'labels'        => array(
+              'name'          => __( 'Sobre' ),
+              'singular_name' => __( 'Sobre' )
+              ),
+          'public'        => true,
+          'has_archive'   => false,
+          'hierarchical'  => false,
+          'exclude_from_search' => true,
+          'capability_type' => 'post',
+          'publicly_queryable' => true,
+          'rewrite'       => array('slug' => 'sobre'),
+          'menu_icon'     => 'dashicons-cart',
+          'supports'      => array( 'title', 'page-attributes', 'revisions' ),
+          )
+        );
+
     flush_rewrite_rules();
 }
 add_action( 'init', 'create_post_types' );
