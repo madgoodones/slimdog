@@ -49,8 +49,8 @@ function gw_nav() {
     array(
         'theme_location'  => 'header-menu',
         'menu'            => '',
-        'container'       => 'div',
-        'container_class' => 'menu-{menu slug}-container',
+        'container'       => 'nav',
+        'container_class' => 'go-navbar',
         'container_id'    => '',
         'menu_class'      => 'menu',
         'menu_id'         => '',

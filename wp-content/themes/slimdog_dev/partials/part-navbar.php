@@ -1,7 +1,12 @@
 <header class="go-header" role="banner">
+	<div class="inner">
+		<div class="go-logo">
+			<?php the_custom_logo(); ?>
+		</div>
+		<?php gw_nav(); ?>
 
-	<nav class="go-navbar" role="navigation">
-			<?php gw_nav(); ?>
-	</nav>
-
+		<div class="go-lang">
+			EN
+		</div>
+	</div>
 </header>
