@@ -7,6 +7,14 @@
 		width: 80%
 		padding: 25px 0px
 		font-weight: 200
+		.nav-toggle
+		    position: fixed
+		    color: #fff
+		    right: 10%
+		    top: 30px
+		    display: none
+		    +breakpoint($tablet)
+		    	display: block
 		.go-lang
 			text-align: right
 			margin-top: -25px
@@ -14,14 +22,33 @@
 		.go-logo
 			position: absolute
 		.go-navbar
+			+breakpoint($tablet)
+				display: table
+				display: none
+				position: fixed
+				height: 100vh
+				background-color: rgba(0, 0, 0, 0.9)
+				top: 0
+				left: 0
+				width: 100%
 			ul
 				list-style-type: none
 				margin: 0
 				text-align: center
 				padding: 6px 0px
+				+breakpoint($tablet)
+					margin-top: 50%
 				li
 					display: inline
 					padding: 0px 15px
 					text-transform: uppercase
+					+breakpoint($tablet)
+						display: block
+						margin: 30px 0px
+						+font-size(40px)
+						font-weight: bold
 					a
 						color: #fff
+
+.table
+	display: table !important

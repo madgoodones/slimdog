@@ -29,7 +29,7 @@ $args = array(
                         </div>
 
                         <div class="div">
-                            <img src="http://localhost/slimdog/wp-content/uploads/2017/08/div.png" alt="">
+                            <img src="http://madknow.com.br/slimdog/wp-content/uploads/2017/08/div.png" alt="">
                         </div>
 
                         <div class="text">

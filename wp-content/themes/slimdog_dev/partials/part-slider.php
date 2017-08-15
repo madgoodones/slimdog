@@ -1,41 +1,49 @@
 <?php 
 $args = array(
-'post_type' => 'slider',
-'posts_per_page' => -1
+'post_type' => 'diretores',
+'posts_per_page' => -1,
 );
 ?>
 
 <?php $the_query = new WP_Query( $args ); ?>
 
 <?php if ( $the_query->have_posts() ) : ?>
-	<div class="owl-carousel owl-slider go-slider">
+	<div class="owl-carousel owl-slider owl-theme go-slider">
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-		<div class="item">
-		<div class="go-slider-item" 
-		style="
-		background: url('<?php the_field('slider_image') ?>');
-		
-		">
-		</div>
-		
-			<div class="inner">
-				<?php if(get_field('html_text')): ?>
-				<div class="title">
-					<?php the_field('slider_title') ?>
+		<?php while(have_rows("projetos")): the_row() ?>
+			
+			<?php if(get_sub_field("is_destaque")): ?>
+
+				<div class="item">
+					<div class="go-slider-item" 
+					style="
+					background-image: url('<?php the_sub_field('imagem_do_projeto') ?>');
+					
+					">
+					</div>
+				
+					<div class="inner">
+						
+						<div class="title" data-aos="fade-down">
+							<?php the_sub_field('empresa') ?>
+						</div>
+
+						<div class="text" data-aos="fade-down">
+							<?php the_sub_field('nome_do_projeto') ?>
+						</div>
+
+						<div class="subtitle" data-aos="fade-down">
+							<?php the_sub_field('subtitulo_slider') ?>
+						</div>
+						
+					</div>
 				</div>
 
-				<div class="text">
-					<?php the_field('slider_text') ?>
-				</div>
+			<?php endif ?>
 
-				<div class="subtitle">
-					<?php the_field('slider_subtitle') ?>
-				</div>
-				<?php endif ?>
-			</div>
+		<?php endwhile ?>
 
-		</div>
 	<?php endwhile; ?>
 	</div>
 <?php endif; ?>

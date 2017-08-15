@@ -1,5 +1,3 @@
-
-
 <?php 
 $args = array(
 'post_type' => 'diretores',
@@ -15,25 +13,25 @@ $args = array(
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
 		<?php while ( have_rows('projetos') ) : the_row(); ?>
-
-			<?php $img = get_sub_field('imagem_do_projeto'); ?>
-	
-			<div class="home-block" style="
-			background: url('<?php echo $img['url'] ?>') no-repeat center center;
-			background-size: 150%;
-			">
-				<div class="title">
-					<?php the_title(); ?>
+			
+			<a href="<?php the_permalink() ?>">
+				<div class="home-block" style="
+				background-image: url('<?php the_sub_field("imagem_do_projeto") ?>');
+				">
+					<div class="title" data-aos="fade-down">
+						<?php the_title(); ?>
+					</div>
 				</div>
-			</div>
+			</a>
+
 		<?php $i++ ?>
 		<?php endwhile; ?>
 
 	<?php endwhile; ?>
 	<?php if($i % 2): ?>
 			<div class="home-block" style="
-			background: url('http://localhost/slimdog/wp-content/uploads/2017/08/slimdog.png') no-repeat center center;
-			background-size: 150%;
+			background: url('http://madknow.com.br/slimdog/wp-content/uploads/2017/08/slimdog.png') no-repeat center center;
+			background-size: cover;
 			">
 			</div>
 	<?php endif; ?>

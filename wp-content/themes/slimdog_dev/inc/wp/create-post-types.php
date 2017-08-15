@@ -9,7 +9,7 @@ function create_post_types() {
               'name'          => __( 'Slider' ),
               'singular_name' => __( 'Slider' )
               ),
-          'public'        => true,
+          'public'        => false,
           'has_archive'   => false,
           'hierarchical'  => false,
           'exclude_from_search' => true,
@@ -62,10 +62,10 @@ function create_post_types() {
 add_action( 'init', 'create_post_types' );
 
 function create_taxonomy() {
-    register_taxonomy( 'tipo-de-produto', 'produto', array(
-        'label'        => __( 'Tipos de produto', 'textdomain' ),
-        'rewrite'      => array( 'slug' => 'tipo-de-produto' ),
+    register_taxonomy( 'Tipo de projeto', 'projeto', array(
+        'label'        => __( 'Tipos de projeto', 'textdomain' ),
+        'rewrite'      => array( 'slug' => 'tipo-de-projeto' ),
         'hierarchical' => true,
         ) );
 }
-//add_action( 'init', 'create_taxonomy', 0 );
+add_action( 'init', 'create_taxonomy', 0 );

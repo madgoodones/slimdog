@@ -1,5 +1,5 @@
-$mobile: max-width 720px
-$tablet: max-width 991px
+$mobile: max-width 576px
+$tablet: max-width 768px
 
 =absolute($t: none, $r: none, $b: none, $l:none)
     position: absolute
@@ -64,12 +64,12 @@ $tablet: max-width 991px
 =md-off($md)
     +make-md-column-offset($md)
 
-=background($size, $position, $repeat, $origin: initial)
+=background($size, $position: center center, $repeat: no-repeat, $origin: initial)
     background:
-        size: $size !important
-        position: $position !important
-        repeat: $repeat !important
-        origin: $origin !important
+        size: $size
+        position: $position
+        repeat: $repeat
+        origin: $origin
 
 =flexbox
     display: -webkit-box

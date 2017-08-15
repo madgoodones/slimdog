@@ -1,33 +1,10 @@
 $( document ).ready(function() {
 	$('.owl-slider').owlCarousel({
 	    loop:true,
-	    margin:0,
+	    margin:10,
 	    nav:true,
-	    autoplay:true,
-	    autoplayTimeout: 4000,
-	    navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
-	    responsive:{
-	        0:{
-	            items:1
-	        },
-	        600:{
-	            items:1
-	        },
-	        1000:{
-	            items:1
-	        }
-	    }
-	});
-
-	$('.owl-about').owlCarousel({
-	    loop:true,
-	    margin:0,
-	    nav:true,
-	    autoplay:false,
-	    autoplayTimeout: 4000,
 	    autoHeight: true,
-	    autoHeightClass: 'owl-height',
-	    navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+	    navText : ['<img src="http://localhost/slimdog/wp-content/uploads/2017/08/prev-arrow-white.png" alt="">','<img src="http://localhost/slimdog/wp-content/uploads/2017/08/next-arrow-white.png" alt="">'],
 	    responsive:{
 	        0:{
 	            items:1
@@ -45,6 +22,8 @@ $( document ).ready(function() {
 	    loop:true,
 	    margin:10,
 	    nav:true,
+	    autoHeight: true,
+	    navText : ['<img src="http://localhost/slimdog/wp-content/uploads/2017/08/prev-arrow.png" alt="">','<img src="http://localhost/slimdog/wp-content/uploads/2017/08/next-arrow.png" alt="">'],
 	    responsive:{
 	        0:{
 	            items:1
@@ -62,4 +41,20 @@ $( document ).ready(function() {
 	var homeblockwidth = homeblock.width();
 	homeblock.height(homeblockwidth/1.5);
 
+
+	$(".nav-toggle").on('click', function(event) {
+
+		$(".go-navbar").fadeToggle('slow', function() {
+
+		});
+	});
+
+	AOS.init({
+		offset: 100,
+      	duration: 400,
+      	easing: 'ease-in-cubic',
+      	delay: 100,
+	});
+
+	$('#fullpage').fullpage();
 });
