@@ -14,7 +14,8 @@ $args = array(
 		<?php while(have_rows("projetos")): the_row() ?>
 			
 			<?php if(get_sub_field("is_destaque")): ?>
-
+				
+				<a href="<?php the_permalink() ?>">
 				<div class="item">
 					<div class="go-slider-item" 
 					style="
@@ -39,6 +40,7 @@ $args = array(
 						
 					</div>
 				</div>
+				</a>
 
 			<?php endif ?>
 

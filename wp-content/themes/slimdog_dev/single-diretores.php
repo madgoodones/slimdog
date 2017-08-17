@@ -1,26 +1,66 @@
 <?php get_header(); ?>
 
+<div class="iframe">
+	<iframe class="page-iframe" width="100%" frameborder="0" src="" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+	</iframe>
+
+	<div class="close-iframe">
+		<i class="fa fa-times fa-2x" aria-hidden="true"></i>
+	</div>
+</div>
+
 	<div id="fullpage">
 		<!-- Section 1 - Header -->
-		<div class="diretor-header section" style="
-		background-image: url('<?php the_field("imagem_em_destaque") ?>');
-		">
+		<?php $a = get_field("imagem_em_destaque"); ?>
+		<?php if (strlen($a) > 0): ?>
+
+			<div class="diretor-header section" style="
+			background-image: url('<?php the_field("imagem_em_destaque") ?>');
+			">
+		<?php else: ?>
+
+			<div class="diretor-header section" style="
+			background-image: url('http://localhost/slimdog/wp-content/uploads/2017/08/placeholder.jpg');
+			">
+			
+		<?php endif ?>
 			<div class="header-title">
 					<?php the_title(); ?>
 			</div>
+
 		</div>
 		
 		<?php if (have_rows("projetos")): ?>
 		<!-- Section 2+N: Projects -->
 			<?php while(have_rows("projetos")): the_row() ?>
+				
+				<?php $b = get_sub_field("imagem_do_projeto"); ?>
 
-				<div class="projeto section" style="
-				background-image: url('<?php the_sub_field("imagem_do_projeto") ?>');
-				">
+				<?php if (strlen($b) > 0): ?>
+
+					<div class="projeto section" style="
+					background-image: url('<?php the_sub_field("imagem_do_projeto") ?>');
+					">
+
+				<?php else: ?>
+
+					<div class="projeto section" style="
+					background-image: url('http://localhost/slimdog/wp-content/uploads/2017/08/placeholder.jpg');
+					">
 					
+				<?php endif ?>
+					
+					<div class="projeto-empresa">
+						<?php the_sub_field("empresa") ?>
+					</div>
 					<div class="projeto-title">
 						<?php the_sub_field("nome_do_projeto") ?>
 					</div>
+
+					<?php $iframe = get_sub_field('video_do_projeto'); ?>
+					<?php preg_match('/src="(.+?)"/', $iframe, $matches); ?>
+					<?php $src = $matches[1]; ?>
+					<input class="video-src" type="hidden" data-src="<?php echo "$src" ?>">
 
 				</div>
 

@@ -2,25 +2,28 @@
 	position: absolute
 	z-index: 1000
 	width: 100%
+	background-color: rgba(0, 0, 0, 0.45)
+	height: 60px
+	+breakpoint($tablet)
+		background-color: transparent
 	.inner
 		margin: 0 auto
 		width: 80%
-		padding: 25px 0px
+		padding: 18px 0px
 		font-weight: 200
 		.nav-toggle
 		    position: fixed
 		    color: #fff
 		    right: 10%
-		    top: 30px
+		    top: 19px
 		    display: none
 		    +breakpoint($tablet)
 		    	display: block
-		.go-lang
-			text-align: right
-			margin-top: -25px
-			color: #fff
 		.go-logo
 			position: absolute
+			a
+				img
+					width: 90px
 		.go-navbar
 			+breakpoint($tablet)
 				display: table
@@ -52,3 +55,8 @@
 
 .table
 	display: table !important
+
+.go-lang
+	position: absolute
+	right: 130px
+	color: #fff

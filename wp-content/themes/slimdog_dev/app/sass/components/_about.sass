@@ -6,7 +6,9 @@
 		text-align: center
 		+make(10,10,10)
 		+make-offset(1,1,1)
-		padding: 0px 90px
+		padding: 0px 60px
+		+breakpoint($tablet)
+			padding: 0px 20px
 		.title
 			+font-size(78px)
 			font-weight: 800
@@ -14,6 +16,10 @@
 			font-weight: 600
 			line-height: 2
 			text-align: justify
+			+breakpoint($tablet)
+				font-weight: 400
+				line-height: 1.4
+				text-align: justify
 		.subtitle
 			+font-size(25px)
 			font-weight: bold

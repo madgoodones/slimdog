@@ -25,6 +25,7 @@ $args = array(
 			</a>
 
 		<?php $i++ ?>
+		<?php break; ?>
 		<?php endwhile; ?>
 
 	<?php endwhile; ?>

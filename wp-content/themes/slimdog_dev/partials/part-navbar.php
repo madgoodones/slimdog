@@ -8,9 +8,5 @@
 		<div class="nav-toggle">
 			<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
 		</div>
-
-		<div class="go-lang">
-			EN
-		</div>
 	</div>
 </header>

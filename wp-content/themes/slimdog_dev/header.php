@@ -18,5 +18,10 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+	<!-- Preloader -->
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+
 	<?php get_template_part( 'partials/part', 'navbar' ); ?>
 			
