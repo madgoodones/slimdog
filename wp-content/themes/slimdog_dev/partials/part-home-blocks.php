@@ -31,7 +31,7 @@ $args = array(
 	<?php endwhile; ?>
 	<?php if($i % 2): ?>
 			<div class="home-block" style="
-			background: url('http://madknow.com.br/slimdog/wp-content/uploads/2017/08/slimdog.png') no-repeat center center;
+			background: url('<?php echo get_template_directory_uri() ?>/dist/img/slimdog.png') no-repeat center center;
 			background-size: cover;
 			">
 			</div>

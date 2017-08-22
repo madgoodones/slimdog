@@ -20,7 +20,7 @@
 		<?php else: ?>
 
 			<div class="diretor-header section" style="
-			background-image: url('http://localhost/slimdog/wp-content/uploads/2017/08/placeholder.jpg');
+			background-image: url('<?php echo get_template_directory_uri() ?>/dist/img/placeholder.jpg');
 			">
 			
 		<?php endif ?>
@@ -45,7 +45,7 @@
 				<?php else: ?>
 
 					<div class="projeto section" style="
-					background-image: url('http://localhost/slimdog/wp-content/uploads/2017/08/placeholder.jpg');
+					background-image: url('<?php echo get_template_directory_uri() ?>/dist/img/placeholder.jpg');
 					">
 					
 				<?php endif ?>
@@ -74,7 +74,7 @@
 			</div>
 
 			<div class="div">
-                <img src="http://madknow.com.br/slimdog/wp-content/uploads/2017/08/div.png" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/div.png" alt="">
             </div>
 
 			<div class="text">
