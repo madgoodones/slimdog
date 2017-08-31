@@ -22,12 +22,11 @@ gulp.task('sass', function () {
 var js = [
     './vendors/jquery/dist/jquery.js',
     './vendors/wow/dist/wow.min.js',
-    './js/main.js',
-    './js/*.js',
     './vendors/owl.carousel/dist/owl.carousel.min.js',
     './vendors/fullpage.js/dist/jquery.fullpage.min.js',
     './vendors/fullpage.js/vendors/scrolloverflow.min.js',
-    './vendors/aos/dist/aos.js'
+    './vendors/aos/dist/aos.js',
+    './js/**/*.js'
 ];
 
 gulp.task('uglify', function(){
@@ -43,6 +42,6 @@ gulp.task('uglify', function(){
 gulp.task('default', ['sass', 'uglify', 'watch', 'copy']);
 
 gulp.task('watch', function(){
-    gulp.watch('js/**/*.js', ['uglify']);
-    gulp.watch('sass/**/*.sass', ['sass']);
+    gulp.watch('./js/**/*.js', ['uglify']);
+    gulp.watch('./sass/**/*.sass', ['sass']);
 });
