@@ -1,4 +1,6 @@
 .diretor-header
+	+background(cover)
+	position: relative
 	.header-title
 		+font-size(78px)
 		text-align: center
@@ -11,6 +13,8 @@
 	text-align: center
 	text-transform: uppercase
 	color: #fff
+	cursor: pointer
+	background-image url('../img/placeholder.jpg')
 	.projeto-title
 		+font-size(78px)
 		font-weight: 800
@@ -19,6 +23,13 @@
 	.projeto-empresa
 		+font-size(35px)
 		font-weight: bold
+	.subtitle
+		+font-size(25px)
+		font-weight: bold
+		small
+			font-size: 70%
+			letter-spacing: 2px
+			font-weight: 400
 
 .about-diretor
 	width: 100%
@@ -63,5 +74,6 @@
 		padding: 7px
 		background-color: #111a19
 		border-radius: 6px
+		cursor: pointer
 		&:hover
 			background-color: #0093cb

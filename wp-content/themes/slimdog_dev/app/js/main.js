@@ -1,4 +1,7 @@
 $( document ).ready(function() {
+
+	$window = $(window);
+
 	$('.owl-slider').owlCarousel({
 	    loop:true,
 	    margin:10,
@@ -41,22 +44,49 @@ $( document ).ready(function() {
 	var homeblockwidth = homeblock.width();
 	homeblock.height(homeblockwidth/1.5);
 
-
-	$(".nav-toggle").on('click', function(event) {
-
-		$(".go-navbar").fadeToggle('slow', function() {
-
+	// Effect Scroll menu
+	var $menu = $('.go-header');
+	$window.on('scroll', function() {
+		if ($window.scrollTop()>=5) $menu.addClass('active'); 
+		else $menu.removeClass('active');
+	});
+	// Toggle menu
+	var $navToggle = $(".nav-toggle"),
+		$goNavigation = $(".go-navbar .navigation"),
+		$goNavbar = $(".go-navbar");
+	$navToggle.on('click', function(event) {
+		event.preventDefault();
+		$goNavbar.fadeToggle('slow', function() {});
+		$window.trigger('resize');
+	});
+	// CLick close menu
+	if ($window.width() <= 768) {
+		$goNavigation.on('click', function(event) {
+			$goNavbar.fadeOut('slow', function() {});
 		});
+	}
+	$window.trigger('resize');
+
+	$('#fullpage').fullpage({
+		scrollBar: true,
 	});
 
-	AOS.init({
-		offset: 100,
-      	duration: 400,
-      	easing: 'ease-in-cubic',
-      	delay: 100,
+	/**
+	 * Anchor smooth
+	 * @type event
+	 */
+	$('a[href*="#"]:not([href="#"], [href*="#panel"], .hash)').click(function() {
+	if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	  var target = $(this.hash);
+	  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	  if (target.length) {
+	    $('html, body').animate({
+	      scrollTop: (target.offset().top-65)
+	    }, 1000);
+	    return false;
+	  }
+	}
 	});
-
-	$('#fullpage').fullpage();
 
 	var altura = $('.iframe').height();
     $(".page-iframe").height(altura);
@@ -85,15 +115,11 @@ $( document ).ready(function() {
 
 	});
 
-	$("#status").fadeIn('slow', function() {
-		
-	});
-
 	$(window).on('load', function() { // makes sure the whole site is loaded 
 
-		$("#status").fadeOut(1000, function() {
-			$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-			$('body').delay(350).css({'overflow':'visible'});
+		$("#status").fadeOut(5000, function() {
+			$('#preloader').delay(500).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+			$('body').delay(500).css({'overflow':'visible'});
 		});
 	});
 });

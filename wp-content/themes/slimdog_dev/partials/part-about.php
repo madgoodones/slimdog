@@ -11,7 +11,7 @@ $args = array(
 
     <?php if ( $the_query->have_posts() ) : ?>
 
-     <div class="owl-carousel owl-theme about">
+     <div id="about" class="owl-carousel owl-theme about">
 
         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 

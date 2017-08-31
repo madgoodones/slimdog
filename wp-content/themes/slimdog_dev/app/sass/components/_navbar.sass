@@ -1,11 +1,11 @@
 .go-header
-	position: absolute
+	position: fixed
 	z-index: 1000
 	width: 100%
 	background-color: rgba(0, 0, 0, 0.45)
-	height: 60px
-	+breakpoint($tablet)
-		background-color: transparent
+	height: 65px
+	&.active
+		background-color: #000
 	.inner
 		margin: 0 auto
 		width: 80%
@@ -40,7 +40,7 @@
 				text-align: center
 				padding: 6px 0px
 				+breakpoint($tablet)
-					margin-top: 40%
+					margin-top: 65px
 				li
 					display: inline
 					padding: 0px 15px
@@ -48,8 +48,11 @@
 					+breakpoint($tablet)
 						display: block
 						margin: 30px 0px
-						+font-size(40px)
+						+font-size(26px)
 						font-weight: bold
+					+breakpoint($mobileRetrato)
+						display: inline-block
+						margin: 15px 0px
 					a
 						color: #fff
 
@@ -57,6 +60,7 @@
 	display: table !important
 
 .go-lang
-	position: absolute
-	right: 130px
 	color: #fff
+	+breakpoint($desktop)
+		position: absolute
+		right: 130px

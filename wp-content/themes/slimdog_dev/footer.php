@@ -1,6 +1,6 @@
 <?php wp_footer() ?>
 
-<footer>
+<footer class="footer" id="contact">
 	<div class="inner">
 
 		<div class="block">
@@ -8,7 +8,7 @@
 			<?php dynamic_sidebar( 'footer_1' ); ?>
 		<?php endif; ?>
 		<div class="social">
-			<div class="title">SOcial</div>
+			<div class="title">Social</div>
 
 			<a href="#">
 				<i class="fa fa-facebook fa-2x" aria-hidden="true"></i>
@@ -44,6 +44,7 @@
 			by MadGO
 		</div>
 	</div>
+</div>
 </div>
 
 <!-- analytics -->

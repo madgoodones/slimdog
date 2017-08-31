@@ -4,20 +4,15 @@ $args = array(
 'posts_per_page' => -1
 );
 ?>
-
 <?php $the_query = new WP_Query( $args ); ?>
 
 <?php if ( $the_query->have_posts() ) : ?>
 	<div class="home-blocks">
 	<?php $i = 0 ?>
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-
-		<?php while ( have_rows('projetos') ) : the_row(); ?>
 			
 			<a href="<?php the_permalink() ?>">
-				<div class="home-block" style="
-				background-image: url('<?php the_sub_field("imagem_do_projeto") ?>');
-				">
+				<div class="home-block" style="background-image: url('<?= get_field("thumbnail") ?>');">
 					<div class="title" data-aos="fade-down">
 						<?php the_title(); ?>
 					</div>
@@ -25,9 +20,6 @@ $args = array(
 			</a>
 
 		<?php $i++ ?>
-		<?php break; ?>
-		<?php endwhile; ?>
-
 	<?php endwhile; ?>
 	<?php if($i % 2): ?>
 			<div class="home-block" style="
